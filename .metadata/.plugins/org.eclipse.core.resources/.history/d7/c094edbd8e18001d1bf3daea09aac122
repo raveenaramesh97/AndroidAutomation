@@ -1,0 +1,7 @@
+Feature: Launch the App and Perform some basic functionaities  
+
+  @tag1
+  Scenario: Launch the Application
+  
+    Given I Launch the Automate Applicaiton
+    

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="104.468">
+    <testcase classname="Launch the App and Perform some basic functionaities" name="Launch the Application" time="103.943">
+        <failure message="Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;Pages.BasicTestPage.driver&quot; is null" type="java.lang.NullPointerException"><![CDATA[Given I Launch the Automate Applicaiton.....................................passed
+And I Create a new instance for testing.....................................failed
+
+StackTrace:
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "Pages.BasicTestPage.driver" is null
+	at Pages.BasicTestPage.clickOnItemByID(BasicTestPage.java:12)
+	at Stepdefinition.BasicTestSteps.ICreateanewinstancefortesting(BasicTestSteps.java:56)
+	at ✽.I Create a new instance for testing(file:///E:/AndroidAutomation/Appiumtests/src/test/resources/Feature/BasicTest.feature:6)
+]]></failure>
+    </testcase>
+</testsuite>

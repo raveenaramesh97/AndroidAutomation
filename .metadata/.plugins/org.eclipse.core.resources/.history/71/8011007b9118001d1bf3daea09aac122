@@ -1,0 +1,15 @@
+package Pages;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class BasicTestPage
+{
+	static WebDriver driver;
+
+	public void clickOnItemByID(String elementByID)
+	{
+		driver.findElement(By.id(elementByID)).click();
+	}
+
+
+}

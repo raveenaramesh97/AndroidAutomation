@@ -1,0 +1,71 @@
+package Stepdefinition;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Random;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import Pages.BasicTestPage;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.But;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+
+public class BasicTestSteps extends BasicTestPage
+{
+
+	static WebDriver driver;
+	Random rand = new Random();
+
+	@Given("I Launch the Automate Applicaiton")
+	public void ILaunchtheAutomateApplicaiton() throws MalformedURLException, InterruptedException
+	{
+		File app= new File("C:/Users/Indium Software/Documents/apk/automation.apk");
+		LaunchApp(app);
+	}
+
+	@And("I Create a new instance for testing")
+	public void ICreateanewinstancefortesting()
+	{		
+		int randomvalue = rand.nextInt(10000);
+
+		clickOnItemByID("com.llamalab.automate:id/insert_flow");
+
+		clickOnItemByID("com.llamalab.automate:id/center");
+		
+		String randomval = Integer.toString(randomvalue);
+		
+		enterValueInTextBoxByID("com.llamalab.automate:id/edit_text", randomval);
+	}
+
+		@When("I configure the Flow Settings")
+		public void IconfiguretheFlowSettings()
+		{
+			clickOnItemByXpath("//android.widget.CheckBox[text(), 'Allow parallel launches from this block']");
+			clickOnItemByXpath("//android.widget.CheckBox[text(), 'Don’t show in list of starting points']");
+			
+		}
+	
+		@Then("I verify '(.*)' is configured")
+		public void IverifyIsConfgured(String expecteValue) 
+		{
+			String actualValue = getAttributeText("//android.widget.EditText[text(), '"+expecteValue+"']");
+			Assert.assertEquals(expecteValue, actualValue);
+		}
+	
+
+	//
+	//	@But("^you are in But annotation$")
+	//	public void but() throws Throwable {
+	//	}
+
+}

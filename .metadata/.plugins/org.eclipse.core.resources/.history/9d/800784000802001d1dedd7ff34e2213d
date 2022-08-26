@@ -1,0 +1,47 @@
+import java.net.URL;
+
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+
+
+public class Calculator {
+
+	public static AndroidDriver driver;
+	
+	public static void main(String[] args) {
+		try {
+			openCalculator();
+		} catch (Exception e) {
+			System.out.println(e.getCause());
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
+	public static void openCalculator() throws Exception
+	{
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setCapability("deviceName", "Redmi 9 Power");
+		cap.setCapability("udid", "63c0b5a61220");
+		cap.setCapability("device", "Android");
+		cap.setCapability("platformName", "Android");
+		cap.setCapability("platformVersion", "10.0");
+		cap.setCapability("appPakage", "com.whatsapp");
+		cap.setCapability("deviceName", "com.whatsapp.Main");
+		cap.setCapability("appWaitForLaunch", "false");
+	//	cap.setCapability(CapabilityType.BROWSER_NAME, "Chrome");
+		cap.setCapability("automationName", "UiAutomator2");
+		//AndroidDriver<MobileElement> driver = new AndroidDriver<MobileElement>(new 
+			//	URL("http://127.0.0.1:4723/wd/hub"),cap);
+		driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),cap);
+
+		//URL url = new URL("http://localhost:4723/wd/hub");
+		//driver = new AppiumDriver(url, cap);
+		
+//		WebElement one = driver.findElement(By.id(""));
+//		one.click();
+	}
+
+}

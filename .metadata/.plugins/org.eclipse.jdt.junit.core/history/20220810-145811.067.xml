@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="Appiumtests" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="TestRunner.TestRunner" time="73.663">
+    <testsuite name="Launch the App and Perform some basic functionaities" time="73.663">
+      <testcase name="Launch the Application" classname="Launch the App and Perform some basic functionaities" time="73.663"/>
+    </testsuite>
+  </testsuite>
+</testrun>
